@@ -4,74 +4,115 @@
     ViewData["Title"] = "Advisor View";
 }
 
-
-
-<div>
-    <h1>
-        Advisor View
-    </h1>
     <div>
-        <h3>
-            Student Name: @ViewBag.currentStudent.FirstName 
-            @if (ViewBag.currentStudent.MiddleInitial != null)
-            {
-                Write(ViewBag.currentStudent.MiddleInitial + ".");
-            }
-            @ViewBag.currentStudent.LastName<br />
-            N#: @ViewBag.currentStudent.N_Number<br />
-            Major: @if (ViewBag.currentStudent.MajorID == 1)
-            {
-                Write("Computer Science");
-            }
-        </h3>
+        <h1>
+            Advisor View
+        </h1>
+        <div>
+            <h3>
+                Student Name: @ViewBag.currentStudent.FirstName
+                @if (ViewBag.currentStudent.MiddleInitial != null)
+                {
+                    Write(ViewBag.currentStudent.MiddleInitial + ".");
+                }
+                @ViewBag.currentStudent.LastName<br />
+                N#: @ViewBag.currentStudent.N_Number<br />
+                Major: @if (ViewBag.currentStudent.MajorID == 1)
+                {
+                    Write("Computer Science");
+                }
+            </h3>
+        </div>
     </div>
-</div>
-<div>
-    <table border="0">
-        <thead>
-            <tr>
-                <th colspan="4" style="text-align: center">
-                    <h2>
-                        Major: @Model.First().Major
-                    </h2>
-                </th>
-            </tr>
-            
-        </thead>
-        <tbody>
-            @foreach (Course c in Model)
-            {
-            <tr>
-                <td colspan="1"><h3 id="@c.CourseID">@nameof(c.CourseID): @c.CourseID</h3></td>
-                <td colspan="2"><h3>@c.CourseName</h3></td>
-                <td colspan="1"><h3>@nameof(c.CreditHours): @c.CreditHours</h3></td>
-            </tr>
-            <tr>
-                <td colspan="4"><b>@nameof(c.Description)</b>: <i>@c.Description</i></td>
-            </tr>
-            <tr>
-                <td colspan="1"><b>@nameof(c.PreRequisites)</b>: 
+    <div>
+        <div class="col-lg-8">
+            <!-- style="width: 60%; float:left; margin-right: 2px" -->
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th colspan="4" style="text-align: center">
+                            <h2>
+                                Major: @Model.First().Major
+                            </h2>
+                        </th>
+                    </tr>
+
+
+                </thead>
+                <tbody>
+                    @(ViewBag.CurrentTerm = Model.First().InitialTermNumber)
+
+                    
+
+                    @Html.Raw("<tr style=\"background-color: gray;\"><td style=\"color: ghostwhite\" colspan=\"4\">" +
+                                        "Term: " + ViewBag.CurrentTerm +
+                                        "</td></tr>" +
+                                        "<tr>" +
+                                            "<th colspan=\"1\" style=\"text-align:left\">" +
+                                                "CourseID" +
+                                            "</th>" +
+                                            "<th colspan=\"2\" style=\"text-align:left; padding-left: 2em\" >" +
+                                                "Course Name" +
+                                            "</th>" +
+                                            "<th colspan=\"1\" style=\"text-align:center\" >" +
+                                                "Credit Hours" +
+                                            "</th>" +
+                                        "</tr>"
+
+                                        );
+                    @foreach (Course c in Model)
+                    {
+                        @if (c.InitialTermNumber != ViewBag.CurrentTerm)
+                        {
+                            ViewBag.CurrentTerm = c.InitialTermNumber;
+                            @Html.Raw("<tr style=\"background-color: gray;\"><td style=\"color: ghostwhite\" colspan=\"4\">" +
+                                         "Term: " + ViewBag.CurrentTerm +
+                                         "</td></tr>" +
+                                        "<tr>" +
+                                            "<th colspan=\"1\" style=\"text-align:left\">" +
+                                                "CourseID" +
+                                            "</th>" +
+                                            "<th colspan=\"2\" style=\"text-align:left; padding-left: 2em\" >" +
+                                                "Course Name" +
+                                            "</th>" +
+                                            "<th colspan=\"1\" style=\"text-align:center\" >" +
+                                                "Credit Hours" +
+                                            "</th>" +
+                                        "</tr>"
+                                         );
+                        }
+
+
+                        <tr style="border-top-style: solid; border-left-style: solid; border-right-style: solid; border-bottom-style: none; border-width: 1px">
+                            <td colspan="1">
+
+                                <h4 id="@c.CourseID">
+                                    <!--<a asp-action="CourseDetails(@c)" asp-route-id="@c.CourseID" target="_blank" ></a>-->@c.CourseID
+                                    <!--@(ViewBag.CourseDetails = @c)-->
+                                </h4>
+
+                            </td>
+                            <td colspan="2" style="padding-left: 2em">
+                                <h4>
+                                    @c.CourseName
+                                </h4>
+                            </td>
+                            <td colspan="1" style="text-align:center"><h4>@c.CreditHours</h4></td>
+                        </tr>
+                        <!--
+        <tr>
+             <td colspan="4"><b>@nameof(c.Description)</b>: <i>@c.Description</i></td>
+        </tr>
+        -->
+                        <tr style="border-top-style: none; border-bottom-style:solid; border-left-style:solid; border-right-style: solid; border-width: 1px">
+                            <td colspan="1">
+                                <b>@nameof(c.PreRequisites)</b>:
                                 <ul>
                                     @if (c.PreRequisites.Count() > 0)
                                     {
-                                        @foreach (int pR in c.PreRequisites)
+                                        @foreach (string pR in c.PreRequisites)
                                         {
                                             <li><a href="#@pR">@pR</a></li>;
-                                        }
-                                    } else
-                                    {
-                                     <li>N/A</li>   
-                                    }
-                                </ul>
-                </td>
-                <td colspan="1"><b>@nameof(c.CoRequisites)</b>:
-                                <ul>
-                                    @if (c.CoRequisites.Count() > 0)
-                                    {
-                                        @foreach (int cR in c.CoRequisites)
-                                        {
-                                            
-                                            <li>@cR</li>;
                                         }
                                     }
                                     else
@@ -79,26 +120,78 @@
                                         <li>N/A</li>
                                     }
                                 </ul>
-                </td>
-                <td colspan="2"></td>
-            </tr>
-            <tr>
-                <td colspan="4">
-                   <hr />
-                </td>
-            </tr>
-            }
-        </tbody>
-        <tfoot>
-            <tr>
-                <th colspan="4">
-                    <h3 style="text-align:right">Total Hours: @ViewBag.TotalHours</h3>
-                </th>
-            </tr>
-        </tfoot>
-</table>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <hr />
+                            </td>
+                        </tr>
+                        
+                    }
+                </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="4">
+                                <h3 style="text-align:right">Total Hours: @ViewBag.TotalHours</h3>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+        </div>
+        <div class="col-lg-4">
+            <!-- style="width: 35%; float: right; margin-left: 5px" -->
+            <!--
+    <aside style="border: 1px solid black; " dropzone="true">
+        <h3 style="margin: 20px 10px 10px 20px">
+            Course Queue
+        </h3>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </aside>
+        -->
+            <br />
+            <aside style="border: 1px solid black;">
+                <div style="margin: 20px 10px 10px 20px">
 
-    
+                    <h3>
+                        @ViewBag.CourseDetails.CourseName
+                    </h3>
+                    <div style="font-size: 1.5em;">
+                        <span style="float: left">
+                            @ViewBag.CourseDetails.CourseID
+                        </span>
+                        <span style="float: right">
+                            Credit Hours: @ViewBag.CourseDetails.CreditHours
+                        </span>
+                    </div>
+                    <br />
+                    <p>
+                        <span style="font-size: 1.25em; text-align: justify">
+                            <br />
+                            Description: @ViewBag.CourseDetails.Description
+                        </span>
 
-</div>
 
+                        <!--
+                This course examines the notion of limit, continuity and derivatives of functions of one variable.
+                The course explores differentiation rules for algebraic, trigonometric, exponential and logarithmic
+                functions. The course discusses applications of differential calculus, such as related rates problems,
+                curve sketching, and optimization. The course also indroduces students to definite and indefinite
+                integrals and the Fundamental Theorem of Calculus. (This course cannot be used to satisfy upper-level
+                degree requirements by mathematics, statistics or natural science majors. Students completing this
+                course may not enroll in MAC2233.)
+                -->
+                    </p>
+
+                </div>
+            </aside>
+        </div>
+
+    </div>

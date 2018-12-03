@@ -23,7 +23,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
-                    
+
                 </button>
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">CPAT1</a>
             </div>
@@ -31,6 +31,7 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-controller="Home" asp-action="AdvisorView">Advisor View</a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -40,11 +41,13 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - CPAT1</p>
-        </footer>
+
     </div>
+
+    <hr />
+    <footer>
+        <p>&copy; 2018 - CPAT1</p>
+    </footer>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

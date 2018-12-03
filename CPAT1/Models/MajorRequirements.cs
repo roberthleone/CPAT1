@@ -9,6 +9,7 @@ namespace CPAT1.Models
     {
         public MajorRequirements()
         {
+            /*
             var ReqClasses = new[]
             {
                 new Course
@@ -82,6 +83,7 @@ namespace CPAT1.Models
                     }
                 }
             };
+            */
         }
     }
 }

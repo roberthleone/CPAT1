@@ -15,7 +15,8 @@ namespace CPAT1.Controllers
             return View();
         }
 
-        public ViewResult AdvisorView()
+        
+        public IActionResult AdvisorView()
         {
             var students = new Student[]
             {
@@ -42,6 +43,754 @@ namespace CPAT1.Controllers
             {
                 new Course
                 {
+                    CourseID = "ENC1101",
+                    CourseName = "Introduction to Rhetoric and Writing",
+                    CreditHours = 3,
+                    Description = "This course is an introduction to writing at the college level. Gordon Rule English credit.",
+                    Major = "Computer Science",
+                    InitialTermNumber = 1,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "MAC2311",
+                    CourseName = "Calculus I",
+                    CreditHours = 4,
+                    Description = " This course examines the notions of limit, continuity and derivatives of functions " +
+                    "of one variable. The course explores differentiation rules for algebraic, trigonometric, exponential " +
+                    "and logarithmic functions. The course discusses applications of differential calculus, such as related " +
+                    "rates problems, curve sketching, and optimization. The course also introduces students to definite and " +
+                    "indefinite integrals and the Fundamental Theorem of Calculus. (This course cannot be used to satisfy " +
+                    "upper-level degree requirements by mathematics, statistics or natural science majors. Students completing " +
+                    "this course may not enroll in MAC 2233.) ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 1,
+                    PreRequisites = new string[]
+                    {
+                        "MAC1147"
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "SCI",
+                    CourseName = "Select a Science Course for Science Majors",
+                    CreditHours = 3,
+                    Description = "Select a Science Course for Science Majors",
+                    Major = "Computer Science",
+                    InitialTermNumber = 1,
+                    PreRequisites = new string[]
+                    {
+                        
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "IDC2000",
+                    CourseName = "The Beauty and Joy of Computing",
+                    CreditHours = 3,
+                    Description = "(Recommended Free Elective) The course focuses on teaching students some " +
+                    "of the Big Ideas of Computing such as abstraction, design, " +
+                    "recursion, concurrency, simulations, and the limits of " +
+                    "computation. The course also provides a historic perspective " +
+                    "of Computing and where it is heading. Throughout the course, we " +
+                    "will emphasis the relevance of Computing to the students, their " +
+                    "future studies, their careers, and society. In this course students " +
+                    "will learn Python as the programming language to deliver the " +
+                    "concepts. Given that data is pervasive and the need to analyze data " +
+                    "is in almost every discipline, learning Python that early will enable " +
+                    "students to conduct data analysis which will be helpful for their studies " +
+                    "at UNF and in their careers.",
+                    Major = "Computer Science",
+                    InitialTermNumber = 1,
+                    PreRequisites = new string[]
+                    {
+                        
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "GEN",
+                    CourseName = "Select a General Education Course",
+                    CreditHours = 3,
+                    Description = "Select a General Education Course",
+                    Major = "Computer Science",
+                    InitialTermNumber = 1,
+                    PreRequisites = new string[]
+                    {
+                        
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "ENC1143",
+                    CourseName = "Introduction to Rhetoric and Narrative",
+                    CreditHours = 3,
+                    Description = "This course introduces students to basic " +
+                    "rhetorical features of a range of texts in different genres, " +
+                    "with a focus on the elements of narrative. Students will learn " +
+                    "how to read critically in preparation for writing critically on " +
+                    "the course texts. Gordon Rule English credit. ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 2,
+                    PreRequisites = new string[]
+                    {
+                        
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "COP2220",
+                    CourseName = "Computer Science I",
+                    CreditHours = 3,
+                    Description = "This course provides an introduction to the programming " +
+                    "process. Topics in the course include types, operations, expressions, " +
+                    "control flow, I/O, functions, program structure, software design techniques, " +
+                    "and problem solving. Course concepts are reinforced with many programming " +
+                    "projects throughout the term in the C programming language. ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 2,
+                    PreRequisites = new string[]
+                    {
+                     
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "SCI",
+                    CourseName = "Select a Science Course for Science Majors",
+                    CreditHours = 3,
+                    Description = "Select a Science Course for Science Majors",
+                    Major = "Computer Science",
+                    InitialTermNumber = 2,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+
+                new Course
+                {
+                    CourseID = "MAC2312",
+                    CourseName = "Calculus II",
+                    CreditHours = 4,
+                    Description = "This course continues the study of definite and " +
+                    "indefinite integrals, and the Fundamental Theorem of Calculus begun " +
+                    "in MAC 2311. The course presents various integration techniques and " +
+                    "their applications, convergence of sequences and series, as well " +
+                    "as power series and Taylor series of a function of one variable. (This " +
+                    "course cannot be used to satisfy upper-level degree requirements by " +
+                    "mathematics, statistics or natural science majors.) ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 2,
+                    PreRequisites = new string[]
+                    {
+                        "MAC2311",
+                        "MAC2241"
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "GEN",
+                    CourseName = "Select a General Education Course",
+                    CreditHours = 3,
+                    Description = "Select a General Education Course",
+                    Major = "Computer Science",
+                    InitialTermNumber = 2,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "ENC1101",
+                    CourseName = "Introduction to Rhetoric and Writing",
+                    CreditHours = 3,
+                    Description = "This course is an introduction to writing at the college level. Gordon Rule English credit.",
+                    Major = "Computer Science",
+                    InitialTermNumber = 3,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "MAC2311",
+                    CourseName = "Calculus I",
+                    CreditHours = 4,
+                    Description = " This course examines the notions of limit, continuity and derivatives of functions " +
+                    "of one variable. The course explores differentiation rules for algebraic, trigonometric, exponential " +
+                    "and logarithmic functions. The course discusses applications of differential calculus, such as related " +
+                    "rates problems, curve sketching, and optimization. The course also introduces students to definite and " +
+                    "indefinite integrals and the Fundamental Theorem of Calculus. (This course cannot be used to satisfy " +
+                    "upper-level degree requirements by mathematics, statistics or natural science majors. Students completing " +
+                    "this course may not enroll in MAC 2233.) ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 3,
+                    PreRequisites = new string[]
+                    {
+                        "MAC1147"
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "SCI",
+                    CourseName = "Select a Science Course for Science Majors",
+                    CreditHours = 3,
+                    Description = "Select a Science Course for Science Majors",
+                    Major = "Computer Science",
+                    InitialTermNumber = 3,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "IDC2000",
+                    CourseName = "The Beauty and Joy of Computing",
+                    CreditHours = 3,
+                    Description = "(Recommended Free Elective) The course focuses on teaching students some " +
+                    "of the Big Ideas of Computing such as abstraction, design, " +
+                    "recursion, concurrency, simulations, and the limits of " +
+                    "computation. The course also provides a historic perspective " +
+                    "of Computing and where it is heading. Throughout the course, we " +
+                    "will emphasis the relevance of Computing to the students, their " +
+                    "future studies, their careers, and society. In this course students " +
+                    "will learn Python as the programming language to deliver the " +
+                    "concepts. Given that data is pervasive and the need to analyze data " +
+                    "is in almost every discipline, learning Python that early will enable " +
+                    "students to conduct data analysis which will be helpful for their studies " +
+                    "at UNF and in their careers.",
+                    Major = "Computer Science",
+                    InitialTermNumber = 3,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "GEN",
+                    CourseName = "Select a General Education Course",
+                    CreditHours = 3,
+                    Description = "Select a General Education Course",
+                    Major = "Computer Science",
+                    InitialTermNumber = 3,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "ENC1143",
+                    CourseName = "Introduction to Rhetoric and Narrative",
+                    CreditHours = 3,
+                    Description = "This course introduces students to basic " +
+                    "rhetorical features of a range of texts in different genres, " +
+                    "with a focus on the elements of narrative. Students will learn " +
+                    "how to read critically in preparation for writing critically on " +
+                    "the course texts. Gordon Rule English credit. ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 4,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "COP2220",
+                    CourseName = "Computer Science I",
+                    CreditHours = 3,
+                    Description = "This course provides an introduction to the programming " +
+                    "process. Topics in the course include types, operations, expressions, " +
+                    "control flow, I/O, functions, program structure, software design techniques, " +
+                    "and problem solving. Course concepts are reinforced with many programming " +
+                    "projects throughout the term in the C programming language. ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 4,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "SCI",
+                    CourseName = "Select a Science Course for Science Majors",
+                    CreditHours = 3,
+                    Description = "Select a Science Course for Science Majors",
+                    Major = "Computer Science",
+                    InitialTermNumber = 4,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+
+                new Course
+                {
+                    CourseID = "MAC2312",
+                    CourseName = "Calculus II",
+                    CreditHours = 4,
+                    Description = "This course continues the study of definite and " +
+                    "indefinite integrals, and the Fundamental Theorem of Calculus begun " +
+                    "in MAC 2311. The course presents various integration techniques and " +
+                    "their applications, convergence of sequences and series, as well " +
+                    "as power series and Taylor series of a function of one variable. (This " +
+                    "course cannot be used to satisfy upper-level degree requirements by " +
+                    "mathematics, statistics or natural science majors.) ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 4,
+                    PreRequisites = new string[]
+                    {
+                        "MAC2311",
+                        "MAC2241"
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "GEN",
+                    CourseName = "Select a General Education Course",
+                    CreditHours = 3,
+                    Description = "Select a General Education Course",
+                    Major = "Computer Science",
+                    InitialTermNumber = 4,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "ENC1101",
+                    CourseName = "Introduction to Rhetoric and Writing",
+                    CreditHours = 3,
+                    Description = "This course is an introduction to writing at the college level. Gordon Rule English credit.",
+                    Major = "Computer Science",
+                    InitialTermNumber = 5,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "MAC2311",
+                    CourseName = "Calculus I",
+                    CreditHours = 4,
+                    Description = " This course examines the notions of limit, continuity and derivatives of functions " +
+                    "of one variable. The course explores differentiation rules for algebraic, trigonometric, exponential " +
+                    "and logarithmic functions. The course discusses applications of differential calculus, such as related " +
+                    "rates problems, curve sketching, and optimization. The course also introduces students to definite and " +
+                    "indefinite integrals and the Fundamental Theorem of Calculus. (This course cannot be used to satisfy " +
+                    "upper-level degree requirements by mathematics, statistics or natural science majors. Students completing " +
+                    "this course may not enroll in MAC 2233.) ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 5,
+                    PreRequisites = new string[]
+                    {
+                        "MAC1147"
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "SCI",
+                    CourseName = "Select a Science Course for Science Majors",
+                    CreditHours = 3,
+                    Description = "Select a Science Course for Science Majors",
+                    Major = "Computer Science",
+                    InitialTermNumber = 5,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "IDC2000",
+                    CourseName = "The Beauty and Joy of Computing",
+                    CreditHours = 3,
+                    Description = "(Recommended Free Elective) The course focuses on teaching students some " +
+                    "of the Big Ideas of Computing such as abstraction, design, " +
+                    "recursion, concurrency, simulations, and the limits of " +
+                    "computation. The course also provides a historic perspective " +
+                    "of Computing and where it is heading. Throughout the course, we " +
+                    "will emphasis the relevance of Computing to the students, their " +
+                    "future studies, their careers, and society. In this course students " +
+                    "will learn Python as the programming language to deliver the " +
+                    "concepts. Given that data is pervasive and the need to analyze data " +
+                    "is in almost every discipline, learning Python that early will enable " +
+                    "students to conduct data analysis which will be helpful for their studies " +
+                    "at UNF and in their careers.",
+                    Major = "Computer Science",
+                    InitialTermNumber = 5,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "GEN",
+                    CourseName = "Select a General Education Course",
+                    CreditHours = 3,
+                    Description = "Select a General Education Course",
+                    Major = "Computer Science",
+                    InitialTermNumber = 5,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "ENC1143",
+                    CourseName = "Introduction to Rhetoric and Narrative",
+                    CreditHours = 3,
+                    Description = "This course introduces students to basic " +
+                    "rhetorical features of a range of texts in different genres, " +
+                    "with a focus on the elements of narrative. Students will learn " +
+                    "how to read critically in preparation for writing critically on " +
+                    "the course texts. Gordon Rule English credit. ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 6,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "COP2220",
+                    CourseName = "Computer Science I",
+                    CreditHours = 3,
+                    Description = "This course provides an introduction to the programming " +
+                    "process. Topics in the course include types, operations, expressions, " +
+                    "control flow, I/O, functions, program structure, software design techniques, " +
+                    "and problem solving. Course concepts are reinforced with many programming " +
+                    "projects throughout the term in the C programming language. ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 6,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "SCI",
+                    CourseName = "Select a Science Course for Science Majors",
+                    CreditHours = 3,
+                    Description = "Select a Science Course for Science Majors",
+                    Major = "Computer Science",
+                    InitialTermNumber = 6,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+
+                new Course
+                {
+                    CourseID = "MAC2312",
+                    CourseName = "Calculus II",
+                    CreditHours = 4,
+                    Description = "This course continues the study of definite and " +
+                    "indefinite integrals, and the Fundamental Theorem of Calculus begun " +
+                    "in MAC 2311. The course presents various integration techniques and " +
+                    "their applications, convergence of sequences and series, as well " +
+                    "as power series and Taylor series of a function of one variable. (This " +
+                    "course cannot be used to satisfy upper-level degree requirements by " +
+                    "mathematics, statistics or natural science majors.) ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 6,
+                    PreRequisites = new string[]
+                    {
+                        "MAC2311",
+                        "MAC2241"
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "GEN",
+                    CourseName = "Select a General Education Course",
+                    CreditHours = 3,
+                    Description = "Select a General Education Course",
+                    Major = "Computer Science",
+                    InitialTermNumber = 6,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "ENC1101",
+                    CourseName = "Introduction to Rhetoric and Writing",
+                    CreditHours = 3,
+                    Description = "This course is an introduction to writing at the college level. Gordon Rule English credit.",
+                    Major = "Computer Science",
+                    InitialTermNumber = 7,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "MAC2311",
+                    CourseName = "Calculus I",
+                    CreditHours = 4,
+                    Description = " This course examines the notions of limit, continuity and derivatives of functions " +
+                    "of one variable. The course explores differentiation rules for algebraic, trigonometric, exponential " +
+                    "and logarithmic functions. The course discusses applications of differential calculus, such as related " +
+                    "rates problems, curve sketching, and optimization. The course also introduces students to definite and " +
+                    "indefinite integrals and the Fundamental Theorem of Calculus. (This course cannot be used to satisfy " +
+                    "upper-level degree requirements by mathematics, statistics or natural science majors. Students completing " +
+                    "this course may not enroll in MAC 2233.) ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 7,
+                    PreRequisites = new string[]
+                    {
+                        "MAC1147"
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "SCI",
+                    CourseName = "Select a Science Course for Science Majors",
+                    CreditHours = 3,
+                    Description = "Select a Science Course for Science Majors",
+                    Major = "Computer Science",
+                    InitialTermNumber = 7,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "IDC2000",
+                    CourseName = "The Beauty and Joy of Computing",
+                    CreditHours = 3,
+                    Description = "(Recommended Free Elective) The course focuses on teaching students some " +
+                    "of the Big Ideas of Computing such as abstraction, design, " +
+                    "recursion, concurrency, simulations, and the limits of " +
+                    "computation. The course also provides a historic perspective " +
+                    "of Computing and where it is heading. Throughout the course, we " +
+                    "will emphasis the relevance of Computing to the students, their " +
+                    "future studies, their careers, and society. In this course students " +
+                    "will learn Python as the programming language to deliver the " +
+                    "concepts. Given that data is pervasive and the need to analyze data " +
+                    "is in almost every discipline, learning Python that early will enable " +
+                    "students to conduct data analysis which will be helpful for their studies " +
+                    "at UNF and in their careers.",
+                    Major = "Computer Science",
+                    InitialTermNumber = 7,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "GEN",
+                    CourseName = "Select a General Education Course",
+                    CreditHours = 3,
+                    Description = "Select a General Education Course",
+                    Major = "Computer Science",
+                    InitialTermNumber = 7,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "ENC1143",
+                    CourseName = "Introduction to Rhetoric and Narrative",
+                    CreditHours = 3,
+                    Description = "This course introduces students to basic " +
+                    "rhetorical features of a range of texts in different genres, " +
+                    "with a focus on the elements of narrative. Students will learn " +
+                    "how to read critically in preparation for writing critically on " +
+                    "the course texts. Gordon Rule English credit. ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 8,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "COP2220",
+                    CourseName = "Computer Science I",
+                    CreditHours = 3,
+                    Description = "This course provides an introduction to the programming " +
+                    "process. Topics in the course include types, operations, expressions, " +
+                    "control flow, I/O, functions, program structure, software design techniques, " +
+                    "and problem solving. Course concepts are reinforced with many programming " +
+                    "projects throughout the term in the C programming language. ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 8,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "SCI",
+                    CourseName = "Select a Science Course for Science Majors",
+                    CreditHours = 3,
+                    Description = "Select a Science Course for Science Majors",
+                    Major = "Computer Science",
+                    InitialTermNumber = 8,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                },
+
+
+                new Course
+                {
+                    CourseID = "MAC2312",
+                    CourseName = "Calculus II",
+                    CreditHours = 4,
+                    Description = "This course continues the study of definite and " +
+                    "indefinite integrals, and the Fundamental Theorem of Calculus begun " +
+                    "in MAC 2311. The course presents various integration techniques and " +
+                    "their applications, convergence of sequences and series, as well " +
+                    "as power series and Taylor series of a function of one variable. (This " +
+                    "course cannot be used to satisfy upper-level degree requirements by " +
+                    "mathematics, statistics or natural science majors.) ",
+                    Major = "Computer Science",
+                    InitialTermNumber = 8,
+                    PreRequisites = new string[]
+                    {
+                        "MAC2311",
+                        "MAC2241"
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = "GEN",
+                    CourseName = "Select a General Education Course",
+                    CreditHours = 3,
+                    Description = "Select a General Education Course",
+                    Major = "Computer Science",
+                    InitialTermNumber = 8,
+                    PreRequisites = new string[]
+                    {
+
+                    }
+
+                }
+
+                /*
+                new Course
+                {
+                    CourseID = "MAC2311",
+                    CourseName = "Calculus",
+                    CreditHours = 4,
+                    Description = "Calculus",
+                    Major = "Computer Science",
+                    InitialTermNumber = 1,
+                    PreRequisites = new string[]
+                    {
+                        "MAC1147"
+                    }
+
+                },
+                
+                new Course
+                {
                     CourseID = 99,
                     CourseName = "PreCalculus",
                     CreditHours = 3,
@@ -59,6 +808,47 @@ namespace CPAT1.Controllers
                     }
 
                 },
+
+                new Course
+                {
+                    CourseID = 99,
+                    CourseName = "PreCalculus",
+                    CreditHours = 3,
+                    Description = "Topics will include linear and quadratic functions and their applications; " +
+                    "systems of equations; inequalities, polynomials, exponentials, logarithms, trigonometric " +
+                    "functions and their inverses and their graphs; trigonometric identities, and complex numbers.",
+                    Major = "Computer Science",
+                    PreRequisites = new int[]
+                    {
+
+                    },
+                    CoRequisites = new int[]
+                    {
+
+                    }
+
+                },
+
+                new Course
+                {
+                    CourseID = 99,
+                    CourseName = "PreCalculus",
+                    CreditHours = 3,
+                    Description = "Topics will include linear and quadratic functions and their applications; " +
+                    "systems of equations; inequalities, polynomials, exponentials, logarithms, trigonometric " +
+                    "functions and their inverses and their graphs; trigonometric identities, and complex numbers.",
+                    Major = "Computer Science",
+                    PreRequisites = new int[]
+                    {
+
+                    },
+                    CoRequisites = new int[]
+                    {
+
+                    }
+
+                },
+
 
                 new Course
                 {
@@ -139,17 +929,63 @@ namespace CPAT1.Controllers
                         200
                     }
                 }
+                */
             };
 
-            double sumHours = 0;
+            int? sumHours = null;
 
             foreach (Course c in courses)
             {
+                if (sumHours == null)
+                    sumHours = 0;
                 sumHours += c.CreditHours;
             }
             ViewBag.TotalHours = sumHours;
 
+            ViewBag.CourseDetails = new Course
+                                    {
+                                        CourseID = "",
+                                        CourseName = "Select a course",
+                                        CreditHours = null,
+                                        Description = "Course description will display once it is selected."
+                                    };
+
+            ViewBag.TermNumber = 0;
+
+            //ViewBag.MajorName = 
+
+            var semesters = new Semester[]
+            {
+                new Semester
+                {
+                    SemesterID = "Fall 2018",
+                    semesterCourses = courses
+                },
+                new Semester
+                {
+                    SemesterID = "Spring 2019",
+                    semesterCourses = courses
+                },
+                new Semester
+                {
+                    SemesterID = "Summer 2019",
+                    semesterCourses = courses
+                },
+                new Semester
+                {
+                    SemesterID = "Fall 2019",
+                    semesterCourses = courses
+                }
+            };
+
             return View(courses);
+        }
+
+        //[HttpPost]
+        public IActionResult CourseDetails (Course c)
+        {
+            ViewBag.CourseDetails = c;
+            return View("AdvisorView");
         }
 
         public IActionResult About()

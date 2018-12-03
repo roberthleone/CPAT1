@@ -1,0 +1,42 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Course Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CourseDetails</h2>
+
+<div style="margin: 20px 10px 10px 20px">
+
+    <h3>
+        @ViewBag.CourseDetails.CourseName
+    </h3>
+    <div style="font-size: 1.5em;">
+        <span style="float: left">
+            @ViewBag.CourseDetails.CourseID
+        </span>
+        <span style="float: right">
+            Credit Hours: @ViewBag.CourseDetails.CreditHours
+        </span>
+    </div>
+    <br />
+    <p>
+        <span style="font-size: 1.25em; text-align: justify">
+            <br />
+            Description: @ViewBag.CourseDetails.Description
+        </span>
+
+
+        <!--
+        This course examines the notion of limit, continuity and derivatives of functions of one variable.
+        The course explores differentiation rules for algebraic, trigonometric, exponential and logarithmic
+        functions. The course discusses applications of differential calculus, such as related rates problems,
+        curve sketching, and optimization. The course also indroduces students to definite and indefinite
+        integrals and the Fundamental Theorem of Calculus. (This course cannot be used to satisfy upper-level
+        degree requirements by mathematics, statistics or natural science majors. Students completing this
+        course may not enroll in MAC2233.)
+        -->
+    </p>
+
+</div>
+
