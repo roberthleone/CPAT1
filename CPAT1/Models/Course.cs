@@ -13,7 +13,7 @@ namespace CPAT1.Models
         public int? CreditHours { get; set; }
         public string Major { get; set; }
         public int InitialTermNumber { get; set; }
-        
+        public int courseDemand { get; set; } = 0;
         public string[] PreRequisites { get; set; }
         
         public void GetPreReqs()

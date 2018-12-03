@@ -1,9 +1,24 @@
-﻿@{
+﻿@model CPAT1.Models.LoginModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+
 <div>
-    <h2>
-        Select "Advisor View from the Navigation Bar to continue."
-    </h2>
+    <center><h3>Login Page by Joshua Faria</h3></center>
+    <div>
+        <form asp-action="LoginAuthenticate" method="post">
+            <label asp-for="uname"><b>Username</b></label>
+            <input asp-for="uname" type="text" placeholder="Enter Username" required>
+
+            <label asp-for="psw"><b>Password</b></label>
+            <input asp-for="psw" type="password" placeholder="Enter Password" required>
+
+            <button type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </form>
+    </div>
 </div>

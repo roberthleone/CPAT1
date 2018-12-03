@@ -1,0 +1,120 @@
+﻿@model IEnumerable<CPAT1.Models.Semester>
+@{
+    /**/
+
+    ViewBag.Title = "AdminView";
+}
+
+<center>
+    <h1>Admin Test Page</h1>
+    <h2>By John Christopher Mier</h2>
+
+</center>
+<hr>
+
+<center>
+    <h2><b>Edit Course Offerings</b></h2>
+    <p><b>How to use this Admin Page</b></p>
+    <p>To enter a course into the database please enter its information below and submit. To add a course to multiple semesters, change the "Semester to add to" selection appropriately and submit again. </p>
+</center>
+
+
+<p><b>Course Name</b></p>
+
+<input type="text" id="courseName">
+<p></p>
+
+
+<p><b>Course ID</b></p>
+<input type="text" id="courseID">
+
+
+<p><b>Course Description</b></p>
+<input type="text" id="courseDescription">
+
+
+
+<p><b>Pre-Requisites</b></p>
+@foreach (CPAT1.Models.Course c in ViewBag.CourseList)
+{
+    <input type="checkbox" id="classA" name="@c.CourseName" value="@c.CourseName">@c.CourseName
+    <br>
+}
+
+
+
+
+<p><b>Credit Hours</b></p>
+<select id="creditHours">
+    <option value="One">One</option>
+    <option value="Three">Three</option>
+    <option value="Four">Four</option>
+    <option value="Five">Five</option>
+</select>
+
+
+
+<p><b>Semester to add to</b></p>
+<select id="semesterToAddTo">
+    @foreach (CPAT1.Models.Semester s in ViewBag.Semesters)
+    {
+        <option value="@s.SemesterID">@s.SemesterID</option>
+    }
+</select>
+
+<p></p>
+<p></p>
+<input type="reset">
+<p></p>
+<button type="button" onclick="displayCourseSheet()">Submit</button>
+
+<!--
+<p><b>Data to be sent to the database</b></p>
+<p id="courseSheetLine1">Your course information will be displayed here after you hit <b>Submit</b></p>
+<p id="courseSheetLine2"></p>
+<p id="courseSheetLine3"></p>
+<p id="courseSheetLine4"></p>
+<p id="courseSheetLine5"></p>
+<p id="courseSheetLine6"></p>
+    -->
+
+<center><h2><b>Demand Report</b></h2></center>
+<p><b>Semester to view</b></p>
+<select id="semesterToAddTo">
+    @foreach (CPAT1.Models.Semester s in ViewBag.Semesters)
+    {
+        <option value="@s.SemesterID">@s.SemesterID</option>
+    }
+</select>
+
+<p></p>
+<p></p>
+
+<span class="col-sm-6">
+    COURSE
+    <br />
+</span>
+
+<span class="col-sm-6">
+    DEMAND
+    <br />
+</span>
+@foreach (CPAT1.Models.Course c in ViewBag.CourseList)
+{
+    <span class="col-sm-6">
+
+        <input type="text" id="classA" name="@c.CourseName" value="@c.CourseName" readonly>
+        <br>
+
+    </span>
+    <span class="col-sm-6">
+
+        <input type="text" id="classA" name="@c.courseDemand" value="@c.courseDemand" readonly>
+        <br>
+    </span>
+}
+@Html.Raw("<br />")
+<button type="button" onclick="displayCourseSheet()">Print Report</button>
+
+
+
