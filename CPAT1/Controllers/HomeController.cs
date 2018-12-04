@@ -15,7 +15,7 @@ namespace CPAT1.Controllers
             return View();
         }
 
-        
+        //Rob Leone
         public IActionResult CoursePlan()
         {
             var students = new Student[]
@@ -87,7 +87,7 @@ namespace CPAT1.Controllers
                     InitialTermNumber = 1,
                     PreRequisites = new string[]
                     {
-                        
+
                     }
 
                 },
@@ -113,7 +113,7 @@ namespace CPAT1.Controllers
                     InitialTermNumber = 1,
                     PreRequisites = new string[]
                     {
-                        
+
                     }
 
                 },
@@ -128,7 +128,7 @@ namespace CPAT1.Controllers
                     InitialTermNumber = 1,
                     PreRequisites = new string[]
                     {
-                        
+
                     }
 
                 },
@@ -147,7 +147,7 @@ namespace CPAT1.Controllers
                     InitialTermNumber = 2,
                     PreRequisites = new string[]
                     {
-                        
+
                     }
 
                 },
@@ -166,7 +166,7 @@ namespace CPAT1.Controllers
                     InitialTermNumber = 2,
                     PreRequisites = new string[]
                     {
-                     
+
                     }
 
                 },
@@ -943,14 +943,14 @@ namespace CPAT1.Controllers
             ViewBag.TotalHours = sumHours;
 
             ViewBag.CourseDetails = new Course
-                                    {
-                                        CourseID = "",
-                                        CourseName = "Select a course",
-                                        CreditHours = null,
-                                        Description = "Course description will display once it is selected."
-                                    };
+            {
+                CourseID = "",
+                CourseName = "Select a course",
+                CreditHours = null,
+                Description = "Course description will display once it is selected."
+            };
 
-            
+
             var semesters = new Semester[]
             {
                 new Semester
@@ -978,13 +978,114 @@ namespace CPAT1.Controllers
             return View(courses);
         }
 
+        //John Mier
         public IActionResult AdminView()
         {
             var semesters = new Semester[]
             {
                 new Semester
                 {
-                    SemesterID = "Fall 2018"
+                    SemesterID = "Fall 2018",
+                    semesterCourses = new Course[]
+                    {
+                        //Used Rob's Course List
+                        new Course
+                            {
+                                CourseID = "ENC1101",
+                                CourseName = "Introduction to Rhetoric and Writing",
+                                CreditHours = 3,
+                                Description = "This course is an introduction to writing at the college level. Gordon Rule English credit.",
+                                Major = "Computer Science",
+                                InitialTermNumber = 1,
+                                courseDemand = 10,
+                                PreRequisites = new string[]
+                                {
+
+                                }
+
+                            },
+
+                            new Course
+                            {
+                                CourseID = "MAC2311",
+                                CourseName = "Calculus I",
+                                CreditHours = 4,
+                                Description = " This course examines the notions of limit, continuity and derivatives of functions " +
+                                "of one variable. The course explores differentiation rules for algebraic, trigonometric, exponential " +
+                                "and logarithmic functions. The course discusses applications of differential calculus, such as related " +
+                                "rates problems, curve sketching, and optimization. The course also introduces students to definite and " +
+                                "indefinite integrals and the Fundamental Theorem of Calculus. (This course cannot be used to satisfy " +
+                                "upper-level degree requirements by mathematics, statistics or natural science majors. Students completing " +
+                                "this course may not enroll in MAC 2233.) ",
+                                Major = "Computer Science",
+                                InitialTermNumber = 1,
+                                courseDemand = 20,
+                                PreRequisites = new string[]
+                                {
+                                    "MAC1147"
+                                }
+
+                            },
+
+                            new Course
+                            {
+                                CourseID = "SCI",
+                                CourseName = "Select a Science Course for Science Majors",
+                                CreditHours = 3,
+                                Description = "Select a Science Course for Science Majors",
+                                Major = "Computer Science",
+                                InitialTermNumber = 1,
+                                courseDemand = 30,
+                                PreRequisites = new string[]
+                                {
+
+                                }
+
+                            },
+
+                            new Course
+                            {
+                                CourseID = "IDC2000",
+                                CourseName = "The Beauty and Joy of Computing",
+                                CreditHours = 3,
+                                Description = "(Recommended Free Elective) The course focuses on teaching students some " +
+                                "of the Big Ideas of Computing such as abstraction, design, " +
+                                "recursion, concurrency, simulations, and the limits of " +
+                                "computation. The course also provides a historic perspective " +
+                                "of Computing and where it is heading. Throughout the course, we " +
+                                "will emphasis the relevance of Computing to the students, their " +
+                                "future studies, their careers, and society. In this course students " +
+                                "will learn Python as the programming language to deliver the " +
+                                "concepts. Given that data is pervasive and the need to analyze data " +
+                                "is in almost every discipline, learning Python that early will enable " +
+                                "students to conduct data analysis which will be helpful for their studies " +
+                                "at UNF and in their careers.",
+                                Major = "Computer Science",
+                                InitialTermNumber = 1,
+                                courseDemand = 40,
+                                PreRequisites = new string[]
+                                {
+
+                                }
+
+                            },
+
+                            new Course
+                            {
+                                CourseID = "GEN",
+                                CourseName = "Select a General Education Course",
+                                CreditHours = 3,
+                                Description = "Select a General Education Course",
+                                Major = "Computer Science",
+                                InitialTermNumber = 1,
+                                courseDemand = 50,
+                                PreRequisites = new string[]
+                                {
+
+                                }
+
+                }
+                    }
                 },
                 new Semester
                 {
@@ -1016,6 +1117,7 @@ namespace CPAT1.Controllers
                     Major = "Computer Science",
                     InitialTermNumber = 1,
                     courseDemand = 10,
+                    SemesterAvailability = 4,
                     PreRequisites = new string[]
                     {
 
@@ -1038,6 +1140,7 @@ namespace CPAT1.Controllers
                     Major = "Computer Science",
                     InitialTermNumber = 1,
                     courseDemand = 20,
+                    SemesterAvailability = 4,
                     PreRequisites = new string[]
                     {
                         "MAC1147"
@@ -1081,6 +1184,7 @@ namespace CPAT1.Controllers
                     Major = "Computer Science",
                     InitialTermNumber = 1,
                     courseDemand = 40,
+                    SemesterAvailability = 5,
                     PreRequisites = new string[]
                     {
 
@@ -1136,12 +1240,13 @@ namespace CPAT1.Controllers
             return View();
         }
 
-        //[HttpPost]
-        public IActionResult CourseDetails (Course c)
+        /*[HttpPost]
+        public IActionResult CourseDetails(Course c)
         {
             ViewBag.CourseDetails = c;
             return View("AdvisorView");
         }
+        */
 
         public IActionResult About()
         {
@@ -1150,6 +1255,7 @@ namespace CPAT1.Controllers
             return View();
         }
 
+        //Joshua Faria
         [HttpPost]
         public IActionResult LoginAuthenticate(string uname, string psw)
         {

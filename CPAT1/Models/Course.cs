@@ -15,7 +15,7 @@ namespace CPAT1.Models
         public int InitialTermNumber { get; set; }
         public int courseDemand { get; set; } = 0;
         public string[] PreRequisites { get; set; }
-        
+        public int? SemesterAvailability { get; set; }
         public void GetPreReqs()
         {
 
